@@ -104,6 +104,17 @@
 			echo to_html($table);
 
 		?>
+
+        <?php
+            $sublist = get_subs();
+            $t = make_table($sublist, ["society"], "table", "sub_socs", [], [0]);
+            $t["children"][0]["attribs"]["hidden"] = ""; // hide table header
+
+            $table = div(div(par("Oeddits"), "panel-heading"), "panel panel-primary");
+            $table["children"][] = $t;
+            echo to_html($table);
+
+        ?>
 		<a data-toggle="modal" data-target="#new-soc" class="btn btn-primary btn-large form-control" >Create a Sub</a>
 	</div>
 </div>

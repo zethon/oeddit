@@ -1,18 +1,18 @@
 <?php
 
-	/**
-		Soc functions
-    */
-    function get_society_id($sname)
+/**
+    Soc functions
+*/
+function get_society_id($sname)
+{
+    $retval = ($rows = query("SELECT * FROM societies WHERE soc_name = ?", $sname));
+    if ($retval !== false && sizeof($retval) > 0)
     {
-        $retval = ($rows = query("SELECT * FROM societies WHERE soc_name = ?", $sname));
-        if ($retval !== false)
-        {
-            return $rows[0];
-        }
-        
-        return false;
+        return $rows[0];
     }
+    
+    return false;
+}
 
 function get_society($sname, $show_deleted = false)
 {
@@ -99,7 +99,14 @@ WHERE s.soc_name =  ?",
 						ORDER BY time desc",
 						$_SESSION["user"]["user_id"]
 					);
-	}
+    }
+    
+    function get_subs()
+    {
+        return query("SELECT soc_name as \"society\" 
+            FROM societies 
+            ORDER BY soc_name");
+    }
 	// end
 	
 	/**

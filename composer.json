@@ -3,18 +3,25 @@
     "description": "A PHP/MySQL Reddit Clone",
     "keywords": ["reddit", "php", "mysql"],
     "license": "MIT",
-    "authors": [
+    "authors": 
+    [
         {
             "name": "Adalid Claure",
             "email": "aclaure@gmail.com",
             "role": "Creator / Main Developer"
         }
     ],
-    "require": {
-        "php": ">=7.0.0"
+
+    "require": 
+    {
+        "php": ">=7.0.0",
+        "filp/whoops": "~2.1"
     },
-    "autoload": {
-        "psr-4": {
+    
+    "autoload": 
+    {
+        "psr-4": 
+        {
             "oeddit\\": "src/"
         }
     }

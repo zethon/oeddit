@@ -99,7 +99,7 @@
 
 <!-- posts -->
 <div class="panel panel-default">
-	<div class="panel-heading">Posts</div>
+	<!-- <div class="panel-heading">Posts</div> -->
 	<div class="list-group panel-body">
 		<?php 
 			if (count($posts) == 0)
@@ -108,14 +108,14 @@
 			}
 			else
 			{
-				foreach($posts as $p)
+                // foreach($posts as $p)
+                $count = sizeof($posts);
+                foreach ($posts as $i=>$p)
 				{
 					echo "<div class=\"row\">";
-
 					echo to_html(post_summary($p, $soc["soc_name"]));
-
-					echo "</div>";
-					echo "<hr>";
+                    echo "</div>";
+                    if ($i+1 < $count) echo "<hr>";
 				}
 			}
 		?>

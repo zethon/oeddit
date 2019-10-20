@@ -5,12 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="DataTables/datatables.min.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<script src="js/jquery-2.1.3.min.js"></script>
-		<script src="DataTables/datatables.min.js" rel="stylesheet"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/DataTables/datatables.min.css" rel="stylesheet">
+		<link href="/css/font-awesome.min.css" rel="stylesheet">
+		<script src="/js/jquery-2.1.3.min.js"></script>
+		<script src="/DataTables/datatables.min.js" rel="stylesheet"></script>
+		<script src="/js/bootstrap.min.js"></script>
 
 		<title><?php echo $title; ?></title>
 		<style>

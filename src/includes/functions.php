@@ -1,15 +1,15 @@
 <?php
 
-    require_once("global.php");
+require_once("global.php");
 
-	/**
-     * Apologizes to user with message.
-     */
-	function apologize($message)
-    {
-        render("apology.php", ["title" => "Sorry!", "message" => $message]);
-        exit;
-    }
+/**
+ * Apologizes to user with message.
+ */
+function apologize($message)
+{
+    render(__DIR__ . "/../templates/apology.php", ["title" => "Sorry!", "message" => $message]);
+    exit;
+}
 		
 	/**
      * Logs out current user, if any
@@ -248,18 +248,20 @@
         // extract variables into local scope
         extract($values);
 
-        require("../templates/header.php");
+        require(__DIR__ . "/../templates/header.php");
 
     	foreach ($templates as $template)
         {
 	        // if template exists, render it
-	        if (!file_exists("../templates/$template"))
-	            trigger_error("Invalid template: $template", E_USER_ERROR);
+            if (!file_exists($template))
+            {
+                trigger_error("Invalid template: $template", E_USER_ERROR);
+            }
 
             // render template
-            require("../templates/$template");
+            require("$template");
     	}        
-        require("../templates/footer.php");
+        require(__DIR__ . "/../templates/footer.php");
     }
 
 	/**

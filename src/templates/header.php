@@ -6,10 +6,10 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../includes/DataTables/datatables.min.css" rel="stylesheet">
+		<link href="DataTables/datatables.min.css" rel="stylesheet">
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<script src="js/jquery-2.1.3.min.js"></script>
-		<script src="../includes/DataTables/datatables.min.js" rel="stylesheet"></script>
+		<script src="DataTables/datatables.min.js" rel="stylesheet"></script>
 		<script src="js/bootstrap.min.js"></script>
 
 		<title><?php echo $title; ?></title>
@@ -30,7 +30,7 @@
 				<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
-					  <a class="navbar-brand" href="home.php">oeddit</a>
+					  <a class="navbar-brand" href="/">oeddit</a>
 					</div>
 
 			    	<ul class="nav navbar-nav">

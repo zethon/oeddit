@@ -1,6 +1,6 @@
 <?php
 
-	// require("../includes/global.php");
+	require("../includes/global.php");
 
 	$pms = get_inbox();
 

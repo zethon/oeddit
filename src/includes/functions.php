@@ -226,17 +226,17 @@
     function render($template, $values = [])
     {
         // if template exists, render it
-        if (file_exists("../templates/$template"))
+        if (file_exists("$template"))
         {
             // extract variables into local scope
             extract($values);
 
-            require("../templates/header.php");
+            require (__DIR__ . '/../templates/header.php');
 			
             // render template
-            require("../templates/$template");
+            require ($template);
             
-            require("../templates/footer.php");
+            require (__DIR__ . '/../templates/footer.php');
         }
         else
         {

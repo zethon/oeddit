@@ -1,20 +1,28 @@
 <div class="container-fluid well well-lg page-header" >
-	<h1 class="soc_title"><?php echo to_html(soc_link($soc["soc_name"]), "soc-title"); ?><small></small></h1>
+	<h1 class="soc_title">
+        <a class='soc-name' href='/o/<?php print($soc["soc_name"]); ?>'>
+            <span class='soc-name'><?php print($soc["soc_name"]); ?></span>
+        </a>
+    </h1>
 	<div class="btn-toolbar">
-		<hr>
+		<!-- <hr> -->
 		<?php
+
 			echo "<a role=button href=\"soc.php?soc=".$soc["soc_name"]."&saction=";
 			// sub/unsub button
 			if ($status["sub"])
 				echo "unsub\" class=\"btn btn-success btn-sm\"><span class=\"glyphicon glyphicon-ok-sign\"></span> Subscribed";
 			else
 				echo "sub\" class=\"btn btn-default btn-sm\"><span class=\"glyphicon glyphicon-plus-sign\"></span> Subscribe";
-			echo "</a>";
-			// info
-			echo "	<a role=button href=\"soc.php?soc=".$soc["soc_name"]."&view=info\" class=\"btn btn-default btn-sm\">
-							<span class=\"glyphicon glyphicon-info-sign\"></span>
-							About
-						</a>";
+            echo "</a>";
+?>
+
+<a role=button href="/o/<?php echo $soc["soc_name"]; ?>/about" class="btn btn-default btn-sm">
+<span class="glyphicon glyphicon-info-sign"></span>
+About
+</a>
+                        
+<?php
 			// mod panel
 			if ($status["mod"] || $status["admin"])
 				echo "	<a role=button href=\"mod_panel.php?soc=".$soc["soc_name"]."\" class=\"btn btn-info btn-sm\">

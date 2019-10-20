@@ -258,7 +258,7 @@
 
 	function post_summary($p, $sname, $show_soc = false)
 	{
-		$a = a("post.php?pid=".$p["post_id"]."&soc=".$sname);
+        $a = a("/o/$sname/" . $p["post_id"]);
 		$title = div(h(4, $p["title"]."\t(".(($p["votes"]>0) ? "+":"").$p["votes"].")", "list-group-item-heading post-title", "post-title-".$p["post_id"]));
 		if ($p["status"]=="STICKIED")
 			$title["children"][] = css_float(div(glyph("pushpin")), "right");
@@ -423,7 +423,7 @@
 	*/
 	function soc_link($sname, $class = "soc-name")
 	{
-		$a = a("soc.php?soc=".$sname, $class);
+		$a = a("o/".$sname, $class);
 		$a["children"][] = span($sname, $class);
 		return $a;
 	}
@@ -437,7 +437,7 @@
 
 	function post_link($pid, $title, $sname, $class = "")
 	{
-		$a = a("post.php?pid=".$pid."&soc=".$sname, $class);
+        $a = a("o/$sname/$pid", $class);
 		$a["children"][] = span($title, $class);
 		return $a;
 	}

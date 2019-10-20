@@ -108,13 +108,13 @@
 			}
 			else
 			{
-                // foreach($posts as $p)
                 $count = sizeof($posts);
                 foreach ($posts as $i=>$p)
 				{
 					echo "<div class=\"row\">";
 					echo to_html(post_summary($p, $soc["soc_name"]));
                     echo "</div>";
+
                     if ($i+1 < $count) echo "<hr>";
 				}
 			}

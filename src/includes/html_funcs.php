@@ -194,7 +194,8 @@
 	function post_full($p, $s, $mod)
 	{
 		// post title
-		$a = a("post.php?pid=".$p["post_id"]."&soc=".$s["soc_name"], "col-md-11");
+        // $a = a("post.php?pid=".$p["post_id"]."&soc=".$s["soc_name"], "col-md-11");
+        $a = a("/o/$s[soc_name]/$p[post_id]", "col-md-11");
 		$title = div(h(4, $p["title"]."\t(".(($p["votes"]>0) ? "+":"").$p["votes"].")", " post-title"));
 		if ($p["status"]=="STICKIED")
 			$title["children"][] = css_float(div(glyph("pushpin")), "right");

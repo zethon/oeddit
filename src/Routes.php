@@ -172,7 +172,7 @@ function soc_about($args)
 
 return 
 [
-    ['GET', '/', 'index_page'],
+    ['GET', '/', ['Oeddit\Controllers\Index', 'show']],
 
     ['GET','/o', 'soc_page_redirect'],
     ['GET','/o/{name}', 'soc_page'],

@@ -7,6 +7,7 @@
 	<div class="btn-toolbar">
 		<!-- <hr> -->
 		<?php
+        
 
 			echo "<a role=button href=\"soc.php?soc=".$soc["soc_name"]."&saction=";
 			// sub/unsub button

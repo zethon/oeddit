@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Example;
+namespace Oeddit;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -57,9 +57,22 @@ switch ($routeInfo[0])
         echo $response->getContent();
     break;
     case \FastRoute\Dispatcher::FOUND:
-        $handler = $routeInfo[1];
-        $vars = $routeInfo[2];
-        call_user_func($handler, $vars);
+    {
+        if (is_array($routeInfo[1]))
+        {
+            $className = $routeInfo[1][0];
+            $method = $routeInfo[1][1];
+            $vars = $routeInfo[2];
+            $class = new $className;
+            $class->$method($vars);
+        }
+        else
+        {
+            $handler = $routeInfo[1];
+            $vars = $routeInfo[2];
+            call_user_func($handler, $vars);
+        }
+    }
     break;
 }
 
